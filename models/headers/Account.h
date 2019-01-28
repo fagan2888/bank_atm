@@ -3,7 +3,7 @@
 
 class Account {
 private:
-    int acnt_num;               // 00011120302
+    const int acnt_num;              // 00011120302
     std::string type;                // User or Admin
     std::string username;            // ex. julio1021
     std::string password;            // ex. is_password
