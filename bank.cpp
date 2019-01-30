@@ -6,28 +6,10 @@
 #include<string>
 using namespace std;
 
-// class User : public Account {
-//     private:
-//         float balance;
-//         int pin;
-//     public:
-//         void deposit();
-//         void withdraw();
-//         void report();
-
-// };
-
-// class Admin : public Account {
-//     private:
-//         int admin_req;
-//     public:
-//         void user_reports();
-//         void user_search();
-// };
-
 
 int main() 
 {
-    
+    int cmd;
+    cmd = main_menu();
     return 0;
 }

@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-void main_menu();
+int main_menu();
 int user_login();
 std::string get_username();
 std::string get_password();

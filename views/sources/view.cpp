@@ -3,16 +3,16 @@
 
 #include<iostream>
 
-int main_menu() {
-    print("_______ Main Menu _______");
-    print("1. Users Login ");
-    print("2. Admin Login ");
-    print("3. Create Account");
-    print("4. Exit ");
-    print(" ");
-    printSL("\n*  Enter Command #:      ");
+int main_menu() 
+{
+    print("\t _____ Main Menu _____\n \
+    \t 1. Users Login\n \
+    \t 2. Admin Login\n \
+    \t 3. Create Account\n \
+    \t 4. Exit\n" ); 
+    print("\n \t Enter Command #:      ");
     int cmd;
-    std::cin  >> cmd;
+    std::cin >> cmd;
     return cmd;
 }
 
@@ -20,28 +20,29 @@ int main_menu() {
 //     int* arr = 
 // }
 
-int user_login() {
-    print("\n_______ User Login _______");
-    int rand_var1;
-    int rand_var2;
-    std::cin >> rand_var1;
-    std::cin >> rand_var2;
-    int* arr = new int[2];
-    arr[0] = rand_var1;
-    arr[1] = rand_var2;
-    return arr;
-}
+// int user_login() 
+// {
+//     print("\n_______ User Login _______");
+//     int rand_var1;
+//     int rand_var2;
+//     std::cin >> rand_var1;
+//     std::cin >> rand_var2;
+//     int* arr = new int[2];
+//     arr[0] = rand_var1;
+//     arr[1] = rand_var2;
+//     return arr;
+// }
 
 
 std::string get_username() {
-    printSL("\nEnter Username:          ");
+    print("\nEnter Username:          ");
     std::string username;
     std::cin >> username;
     return username;
 }
 
 std::string get_password() {
-    printSL("Enter Password:          ");
+    print("Enter Password:          ");
     std::string password;
     std::cin >> password;
     return password;
@@ -51,18 +52,19 @@ void create_account() {
     print("\n_______ Create Account _______");
     int acnt_num;
     std::string type, username, password, first_nm, last_nm;
-    printSL("Enter Account Number:    ");
+    print("\nEnter Account Number:    ");
     std::cin >> acnt_num;
-    printSL("Type (User or Admin):    ");
+    print("\nType (User or Admin):    ");
     std::cin >> type;
-    printSL("Enter First Name:        ");
+    print("\nEnter First Name:        ");
     std::cin >> first_nm;
-    printSL("Enter Last  Name:        ");    
+    print("\nEnter Last  Name:        ");    
     std::cin >> last_nm;
-    printSL("Enter Username:          ");
+    print("\nEnter Username:          ");
     std::cin >> username;
-    printSL("Enter Password:          ");
+    print("\nEnter Password:          ");
     std::cin >> password;
+    
 }
 
 void user_menu() {
