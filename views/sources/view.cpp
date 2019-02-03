@@ -2,15 +2,16 @@
 #include "../../models/headers/Account.h"
 
 #include<iostream>
+#include<tuple>
 
 int main_menu() 
 {
-    print("\t _____ Main Menu _____\n \
-    \t 1. Users Login\n \
-    \t 2. Admin Login\n \
-    \t 3. Create Account\n \
-    \t 4. Exit\n" ); 
-    print("\n \t Enter Command #:      ");
+    print(" _____ Main Menu _____ \
+    \n 1.  Users Login \
+    \n 2.  Admin Login \
+    \n 3.  Create Account \
+    \n 4.  Exit" ); 
+    print("\n\n Enter Command #:   ");
     int cmd;
     std::cin >> cmd;
     return cmd;
@@ -34,37 +35,25 @@ int main_menu()
 // }
 
 
-std::string get_username() {
-    print("\nEnter Username:          ");
-    std::string username;
-    std::cin >> username;
-    return username;
-}
-
-std::string get_password() {
-    print("Enter Password:          ");
-    std::string password;
-    std::cin >> password;
-    return password;
-}
-
-void create_account() {
-    print("\n_______ Create Account _______");
+std::tuple<int,std::string,std::string,std::string,
+std::string,std::string> create_account() {
+    print("_______ Create Account _______");
     int acnt_num;
     std::string type, username, password, first_nm, last_nm;
     print("\nEnter Account Number:    ");
     std::cin >> acnt_num;
-    print("\nType (User or Admin):    ");
+    print("Type (User or Admin):    ");
     std::cin >> type;
-    print("\nEnter First Name:        ");
+    print("Enter First Name:        ");
     std::cin >> first_nm;
-    print("\nEnter Last  Name:        ");    
+    print("Enter Last  Name:        ");    
     std::cin >> last_nm;
-    print("\nEnter Username:          ");
+    print("Enter Username:          ");
     std::cin >> username;
-    print("\nEnter Password:          ");
+    print("Enter Password:          ");
     std::cin >> password;
-    
+    return std::make_tuple(acnt_num, type, first_nm, last_nm,
+                            username, password);
 }
 
 void user_menu() {

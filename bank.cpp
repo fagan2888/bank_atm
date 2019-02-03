@@ -4,12 +4,15 @@
 
 #include<iostream>
 #include<string>
+#include<tuple>
 using namespace std;
 
 
 int main() 
 {
-    int cmd;
-    cmd = main_menu();
+    auto [acnt_num,type,first_nm,last_nm,
+            username,password] = create_account();
+    Account user(acnt_num,type,first_nm,last_nm,username,password);
+    std::cout << user.get_acnt_num();
     return 0;
 }
