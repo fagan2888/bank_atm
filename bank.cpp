@@ -7,12 +7,15 @@
 #include<tuple>
 using namespace std;
 
-
-int main() 
+void Account_creation() 
 {
     auto [acnt_num,type,first_nm,last_nm,
             username,password] = create_account();
-    Account user(acnt_num,type,first_nm,last_nm,username,password);
-    std::cout << user.get_acnt_num();
+    User user(acnt_num,type,first_nm,last_nm,username,password);
+}
+
+int main() 
+{
+    Account_creation();
     return 0;
 }
