@@ -16,13 +16,18 @@ public:
     int get_acnt_num() {return acnt_num;}
     std::string get_acnt_type() {return type;}
     std::string get_name() {return first_nm + " " + last_nm;}
+
+friend std::ostream& operator <<(std::ostream& out, const User& user);
+
 };
+
+
 
 class Admin {
 private:      
     std::string type, username, password, first_nm, last_nm;  
 public:
-    User(std::string type_I, std::string username_I, std::string password_I,
+    Admin(std::string type_I, std::string username_I, std::string password_I,
     std::string first_nm_I, std::string last_nm_I);
 };
 
