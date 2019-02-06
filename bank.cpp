@@ -6,8 +6,10 @@
 #include<string>
 #include<tuple>
 #include<fstream>
+#include<sstream>
 using namespace std;
 
+/*                          Create Account                           */
 User* account_creation() 
 {
     auto [acnt_num, type, first_nm, last_nm,
@@ -20,12 +22,12 @@ void account_log()
     // Returning a pointer to a User class, had we just returned a 
     // class then it would've been slower b/c we would need a copy.
     User* user = account_creation();
-    std::cout << (*user).get_acnt_num();
     std::ofstream out("students.txt",ios::app);
     out << *user;
     delete user;
 }
 
+/*                          User Login                              */
 std::string find_line(std::ifstream& in, std::string username) 
 {
     std::string line;
@@ -37,26 +39,44 @@ std::string find_line(std::ifstream& in, std::string username)
     return "None";
 }
 
-void user_login() 
+User* user_login() 
 {
     bool test;
+    int acnt_num; 
+    bool type;     
+    std::string usrnm, pswrd, first_nm, last_nm; 
     while (!test) {
         auto [username, password] = user_login_menu();
         std::ifstream in("students.txt");
         std::string line = find_line(in,username);
         if (line.find(password) != string::npos) {
-            std::cout << line << std::endl;
+            std::istringstream line_stream(line);
+            line_stream >> acnt_num >> type >> first_nm >> 
+            last_nm >> usrnm >> pswrd;
             test = 1;
         }
         else {
-            std::cout << "Try Again, No Record Found" << std::endl;
+            std::cout << "\n Try Again, No Record Found" << std::endl;
         }
     }
+    return new User(acnt_num,type,first_nm,last_nm,usrnm,pswrd);
 }
 
 
 int main() 
 {
-    user_login();
+    int init_cmd;
+    while (init_cmd != 4) {
+        init_cmd = main_menu();
+        if (init_cmd == 1) {
+            account_log();
+        }
+        if (init_cmd == 2) {
+            User* user = user_login();
+            int cmd = user_main_menu();
+            std::cout << cmd;
+        }
+    }
+    std::cout << "\n Exiting Now!";
     return 0;
 }

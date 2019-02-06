@@ -1,0 +1,1 @@
+cd "/Users/julio/Downloads/bank_atm/" && g++ -std=c++17 bank.cpp views/sources/view.cpp models/sources/accounts.cpp models/sources/my_funcs.cpp -o bank&& "/Users/julio/Downloads/bank_atm/"bank 
